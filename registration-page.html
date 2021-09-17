@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="registration.css.css">
+</head>
+<body>
+    <nav id="navbar" class="nav">
+        <ul class="nav-list">
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Works</a>
+            </li>
+            <li>
+                <a href="#">Contacts</a>
+            </li>
+        </ul>
+
+    </nav>
+<section>    
+    
+    <div class="container">
+        <!-- <form> -->
+        <h1>Register</h1>
+        <h5>to connect with fellow developers</h5>
+
+        <input type="text" placeholder="Enter Username" id="uname" required>
+
+        
+        <input type="text" placeholder="First Name" id="fname" required>
+
+        
+        <input type="text" placeholder="Second Name" id="sname" required>
+
+        
+        <input type="email" placeholder="E-maill Address" id="email" required>
+
+        
+        <input type="password" placeholder="Enter Password" id="pwd" required>
+
+        
+        <!-- <input type="password" placeholder="Confirm Address" id="pwd2" required> -->
+
+        <button onclick="register()">Register</button>
+        <p>Already a member? <a class="a-color" href="./login.html">Login </a></p>
+    <!-- </form> -->
+    </div>
+    
+</section>
+
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+
+<script src="./login.js"></script>
+</html>
