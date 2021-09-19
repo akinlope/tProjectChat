@@ -68,7 +68,11 @@ console.log(password);
     alert('User created')
 
     // link to the next page
-    window.location
+    //window.location
+    document.getElementById("myButton").onclick = function() {
+        location.href = "./mainpage.html"
+    }
+    
 
     })
     .catch(function(error){
@@ -78,7 +82,8 @@ console.log(password);
 
         alert(error_message)
 
-        
+  
+       
     })
     }
 
