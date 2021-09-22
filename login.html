@@ -20,26 +20,35 @@
                 <a href="#">Contacts</a>
             </li>
         </ul>
-
     </nav>
+    
     <section>
-        <form action="action_page.php" method="POST">
         <div class="container">
             <h1>Login</h1>
             <h5>to interact with fellow developers</h5>
 
             
-            <input type="text" placeholder="Username" name="uname" required>
+            <input type="text" placeholder="E-maill" id="email" required>
 
             
-            <input type="password" placeholder="Password" name="pwd">
+            <input type="password" placeholder="Password" id="pwd">
 
-            <button type="submit">Login</button>
+            <button onclick="login()">Login</button>
             <p>Not yet a member? <a class="a-color" href="./registration-page.html">Register </a></p>
 
             <label for=""></label>
         </div>
-        </form>
     </section>
+
+<script src="./registration.js"></script>
 </body>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+
 </html>
