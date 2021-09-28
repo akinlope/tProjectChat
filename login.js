@@ -47,7 +47,7 @@ function login() {
           database_ref.child('users/' + user.uid).update(user_data);
       
           alert('User logged in')
-          window.location.href="./login.html"
+          window.location.href="./chatPage.html"
       //  console.log("button is working...");   
   })
   .catch(function (error) {
