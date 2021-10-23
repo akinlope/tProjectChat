@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="login.css".>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
 </head>
 <body>
 
@@ -27,11 +28,14 @@
             <h1>Login</h1>
             <h5>to interact with fellow developers</h5>
 
-            
+            <div>
             <input type="text" placeholder="E-maill" id="email" required>
-
+            </div>
             
+            <div class="pass">
             <input type="password" placeholder="Password" id="pwd">
+            <i class="fa fa-eye" id="togglePassword" onclick='togglePassword()'></i>
+            </div>
 
             <button onclick="login()">Login</button>
             <p>Not yet a member? <a class="a-color" href="./registration-page.html">Register </a></p>

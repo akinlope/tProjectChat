@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="registration.css.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
 </head>
 <body>
     <nav id="navbar" class="nav">
@@ -38,10 +39,10 @@
         
         <input type="email" placeholder="E-maill Address" id="email" required>
 
-        
+        <div class="pass">
         <input type="password" placeholder="Enter Password" id="pwd" required>
-
-           
+        <i class="fa fa-eye" id="togglePassword" onclick='togglePassword()'></i>
+        </div>  
 
         <button onclick="register()">Register</button>
         <p>Already a member? <a class="a-color" href="./login.html">Login </a></p>        
@@ -56,7 +57,7 @@
 https://firebase.google.com/docs/web/setup#available-libraries -->
 <!-- <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script> -->
 <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-firestore.js"></script>
 
 <script src="./registration.js"></script>
 </html>

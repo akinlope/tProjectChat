@@ -200,3 +200,14 @@ p{
     text-align: center;   
     font-style: italic;
 }
+
+ .pass {
+   position: relative;
+ }
+
+ .pass > i{
+     position: absolute;
+     top: 17px;
+     right: 110px;
+     cursor: pointer;
+ }

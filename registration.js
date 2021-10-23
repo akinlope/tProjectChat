@@ -17,72 +17,79 @@
 
 //   initialize variables
 const auth = firebase.auth();
-const database = firebase.database();
+const db = firebase.firestore();
 
 
 //for Registration 
 function register(){
-        // Get all input fields 
-    username = document.getElementById('uname').value;
-    firstname = document.getElementById('fname').value;
-    surname = document.getElementById('sname').value;
-    email = document.getElementById('email').value;
-    password = document.getElementById('pwd').value;
-    // passWord2 = document.getElementById('pwd2').value;
+    // Get all input fields 
+username = document.getElementById('uname').value;
+firstname = document.getElementById('fname').value;
+surname = document.getElementById('sname').value;
+email = document.getElementById('email').value;
+password = document.getElementById('pwd').value;
+// passWord2 = document.getElementById('pwd2').value;
 
-    //validate password
-        function validate_password(password){
-            if (password < 6){
-                return false
-            }else{
-                return true
-            }
+//validate password
+    function validate_password(password){
+        if (password < 6){
+            return false
+        }else{
+            return true
         }
-    //validate input fields 
-    if(email == null || validate_password(password) == false){
-        alert('Email or Password is not correct');
-    
-        //don't continue the code 
     }
+//validate input fields 
+if(email == null || validate_password(password) == false){
+    alert('Email or Password is not correct');
+
+    //don't continue the code 
+}
 
 
-    // move on with auth
-    auth.createUserWithEmailAndPassword(email, password)
-    .then(function(){
-        // declear user variable
-        var user = auth.currentUser
+// move on with auth
+auth.createUserWithEmailAndPassword(email, password)
+.then(function(){
+    // declear user variable
+    var user = auth.currentUser
 
-        // add this user to firebase database
-        var database_ref = database.ref()
-
-        // create user data
-        var user_data = {
-            username : username,
-            firstname : firstname,
-            surname : surname,
-            email : email,
-            last_login : Date.now()
-    }
-    //Push to firebase database
-    database_ref.child('users/' + user.uid).set(user_data);
-
-    alert('User created')
-console.log("button working......");
-    // link to the next page
-    window.location.href="./chatPage.html"
     
+   
 
-    })
-    .catch(function(error){
-        // firebase will use this to alert of it's error
-        var error_code = error.code
-        var error_message =error.message 
+    // create user data
+    var user_data = {
+        username : username,
+        firstname : firstname,
+        surname : surname,
+        email : email,
+        last_login : Date.now()
+}
+//Push to firebase database
+    db.collection('users' + user.uid).set(user_data);
 
-        alert(error_message)
-    })
+alert('User created')
+
+// link to the next page
+window.location.href="./friendslist.html"
+
+
+})
+.catch(function(error){
+    // firebase will use this to alert of it's error
+    var error_code = error.code
+    var error_message =error.message 
+
+    alert(error_message)
+})
 };
 
+//function to toggle password
+function togglePassword(){
+    let password = document.getElementById('pwd');
 
+    //toggle the type attribut
+    let type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+}
 
 
 

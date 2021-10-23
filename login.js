@@ -1,4 +1,6 @@
-console.log("connected...");
+console.log('connected...');
+  
+  
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
@@ -18,11 +20,13 @@ const auth = firebase.auth();
 const database = firebase.database();
 
 
+
   //setting up the login function login
 function login() {
   //get required input field
   email = document.getElementById('email').value;
   password = document.getElementById('pwd').value;
+
   
   //validate input fields
   if(email == null || password == null){
@@ -47,7 +51,7 @@ function login() {
           database_ref.child('users/' + user.uid).update(user_data);
       
           alert('User logged in')
-          window.location.href="./chatPage.html"
+          window.location.href="./friendslist.html"
       //  console.log("button is working...");   
   })
   .catch(function (error) {
@@ -58,3 +62,17 @@ function login() {
             alert(error_message)  
   })
 }
+
+
+
+
+//function to toogle the password
+function togglePassword() {
+  let password = document.getElementById('pwd');
+
+//toggle the type attribute
+  let type = password.getAttribute('type') ==='password' ? 'text' : 'password';
+  password.setAttribute('type', type);  
+}
+
+
